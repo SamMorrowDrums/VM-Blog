@@ -2,18 +2,18 @@
   "name": "ViewMachine-Blog",
   "version": "0.0.0",
   "description": "Website for ViewMachine Blog CMS",
-  "main": "app/app.js",
+  "main": "app.js",
   "scripts": {
     "test": "console.log('test')"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SamMorrowDrums/ViewMachine-Website.git"
+    "url": "https://github.com/SamMorrowDrums/VM-Blog.git"
   },
   "keywords": [
     "ViewMachine",
     "VM",
-    "jQuery",
+    "VM-Blog",
     "Template"
   ],
   "author": "Sam Morrow",
