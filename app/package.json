@@ -1,0 +1,27 @@
+{
+  "name": "ViewMachine-Blog",
+  "version": "0.0.0",
+  "description": "Website for ViewMachine Blog CMS",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "console.log('test')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SamMorrowDrums/ViewMachine-Website.git"
+  },
+  "keywords": [
+    "ViewMachine",
+    "VM",
+    "jQuery",
+    "Template"
+  ],
+  "author": "Sam Morrow",
+  "license": "The MIT License (MIT)",
+  "bugs": {
+    "url": "https://github.com/SamMorrowDrums/ViewMachine-Website/issues"
+  },
+  "dependencies": {
+    "express": "~3.4.8",
+  }
+}
