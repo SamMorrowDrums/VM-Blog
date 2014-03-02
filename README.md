@@ -22,7 +22,8 @@ Now log into the server
 
 `ssh vmblogtest`
 
-```chmod 700 install.sh
+```
+chmod 700 install.sh
 sudo ./install.sh
 ```
 
