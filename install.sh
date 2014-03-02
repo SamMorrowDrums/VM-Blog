@@ -1,6 +1,7 @@
 #### ViewMachine Blog install script ### 
 
 # Begin sourcing updated repositories and setup for nodeJS, git and mongoDB
+cd $HOME
 sudo apt-get update
 sudo apt-get install python-software-properties python g++ make
 sudo add-apt-repository ppa:chris-lea/node.js
@@ -27,10 +28,11 @@ cd blog
 
 #Daemonize the process
 sudo cp vmblog.conf /etc/init/vmblog.conf
+sudo chmod 700 /etc/init/vmblog.conf
 
 #Set up node
 cd app
-npm update
+sudo npm update
 sudo start vmblog
 
 
