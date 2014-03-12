@@ -14,6 +14,7 @@ passport.use(new GoogleStrategy({
     console.log(identifier);
     console.log(profile);
     console.log(done);
+    done(false, 'Kermit');
   }
 ));
 
