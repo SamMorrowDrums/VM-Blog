@@ -7,8 +7,8 @@ var express = require('express'),
   port = process.env.PORT || 3000;
 
 passport.use(new GoogleStrategy({
-    returnURL: 'ec2-54-186-119-32.us-west-2.compute.amazonaws.com/auth/google/return',
-    realm: 'ec2-54-186-119-32.us-west-2.compute.amazonaws.com/'
+    returnURL: 'http://ec2-54-186-119-32.us-west-2.compute.amazonaws.com/auth/google/return',
+    realm: 'http://ec2-54-186-119-32.us-west-2.compute.amazonaws.com/'
   },
   function(identifier, profile, done) {
     User.findOrCreate({ openId: identifier }, function(err, user) {
