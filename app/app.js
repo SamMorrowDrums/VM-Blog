@@ -6,6 +6,14 @@ var express = require('express'),
   GoogleStrategy = require('passport-google').Strategy,
   port = process.env.PORT || 3000;
 
+app.use(express.logger());
+  app.use(express.cookieParser());
+  app.use(express.bodyParser());
+  app.use(express.session({ secret: 'keyboard cat' }));
+  app.use(passport.initialize());
+  app.use(passport.session());
+  app.use(app.router);
+
 passport.use(new GoogleStrategy({
     returnURL: 'http://ec2-54-186-119-32.us-west-2.compute.amazonaws.com/auth/google/return',
     realm: 'http://ec2-54-186-119-32.us-west-2.compute.amazonaws.com/'
@@ -17,8 +25,6 @@ passport.use(new GoogleStrategy({
     done(false, 'Kermit');
   }
 ));
-
-app.use(express.logger());
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
