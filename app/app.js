@@ -26,6 +26,14 @@ passport.use(new GoogleStrategy({
   }
 ));
 
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
