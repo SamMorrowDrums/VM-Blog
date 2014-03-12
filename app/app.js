@@ -15,8 +15,8 @@ app.use(express.logger());
   app.use(app.router);
 
 passport.use(new GoogleStrategy({
-    returnURL: 'http://ec2-54-186-119-32.us-west-2.compute.amazonaws.com/auth/google/return',
-    realm: 'http://ec2-54-186-119-32.us-west-2.compute.amazonaws.com/'
+    returnURL: 'http://ec2-54-186-83-229.us-west-2.compute.amazonaws.com/auth/google/return',
+    realm: 'http://ec2-54-186-83-229.us-west-2.compute.amazonaws.com/'
   },
   function(identifier, profile, done) {
     console.log(identifier);
