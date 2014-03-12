@@ -11,9 +11,9 @@ passport.use(new GoogleStrategy({
     realm: 'http://ec2-54-186-119-32.us-west-2.compute.amazonaws.com/'
   },
   function(identifier, profile, done) {
-    User.findOrCreate({ openId: identifier }, function(err, user) {
-      done(err, user);
-    });
+    console.log(identifier);
+    console.log(profile);
+    console.log(done);
   }
 ));
 
@@ -32,13 +32,12 @@ app.get('/auth/google', passport.authenticate('google'));
 // the process by verifying the assertion.  If valid, the user will be
 // logged in.  Otherwise, authentication has failed.
 app.get('/auth/google/return',
-  passport.authenticate('google', function (req, res) {
-    // If this function gets called, authentication was successful.
-    // `req.user` contains the authenticated user.
-    console.log(req.user);
-    res.redirect('/users/' + req.user.username);
-}));
+  passport.authenticate('google', { successRedirect: '/',
+                                    failureRedirect: '/login' }));
 
+app.get('/login', function (req, res) {
+  res.send('Hazzah!');
+});
 
 app.listen(port);
 console.log('Listening on port ' +  port);
